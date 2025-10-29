@@ -1,11 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Inicio - By Aleli Boutique</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/inicio.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1>Hello Guys!</h1>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="outfit-tendencia">
+            <div class="columna-imagen">
+                <img src="images/modelo-tendencia.jpg" alt="Modelo con outfit en tendencia">
+            </div>
+
+            <div class="columna-info">
+                <h1>OUTFIT EN TENDENCIA</h1>
+
+                <div class="lista-productos">
+                    <!-- Producto 1 -->
+                    <div class="producto-item">
+                        <div class="producto-nombre">Blazer Oversized Beige</div>
+                        <div class="producto-talla">
+                            <span class="talla-label">Talla:</span>
+                            <div class="tallas-opciones">
+                                <label class="talla-opcion">
+                                    <input type="radio" name="talla-producto1" value="S">
+                                    <span class="talla-custom">S</span>
+                                </label>
+                                <label class="talla-opcion">
+                                    <input type="radio" name="talla-producto1" value="M" checked>
+                                    <span class="talla-custom">M</span>
+                                </label>
+                                <label class="talla-opcion">
+                                    <input type="radio" name="talla-producto1" value="L">
+                                    <span class="talla-custom">L</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="producto-precio">S/. 120.00</div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="producto-item">
+                        <div class="producto-nombre">Pantalón Palazzo Negro</div>
+                        <div class="producto-talla">
+                            <span class="talla-label">Talla:</span>
+                            <div class="tallas-opciones">
+                                <label class="talla-opcion">
+                                    <input type="radio" name="talla-producto2" value="S">
+                                    <span class="talla-custom">S</span>
+                                </label>
+                                <label class="talla-opcion">
+                                    <input type="radio" name="talla-producto2" value="M" checked>
+                                    <span class="talla-custom">M</span>
+                                </label>
+                                <label class="talla-opcion">
+                                    <input type="radio" name="talla-producto2" value="L">
+                                    <span class="talla-custom">L</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="producto-precio">S/. 85.00</div>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="producto-item">
+                        <div class="producto-nombre">Correa Elegante Marrón</div>
+                        <div class="producto-talla">
+                            <span class="talla-label">Talla:</span>
+                            <div class="tallas-opciones">
+                                <label class="talla-opcion">
+                                    <input type="radio" name="talla-producto3" value="S">
+                                    <span class="talla-custom">S</span>
+                                </label>
+                                <label class="talla-opcion">
+                                    <input type="radio" name="talla-producto3" value="M" checked>
+                                    <span class="talla-custom">M</span>
+                                </label>
+                                <label class="talla-opcion">
+                                    <input type="radio" name="talla-producto3" value="L">
+                                    <span class="talla-custom">L</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="producto-precio">S/. 35.00</div>
+                    </div>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito!</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/layout.js"></script>
 </body>
 </html>

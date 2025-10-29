@@ -1,0 +1,263 @@
+
+/* Estilos de inicio*/
+
+.outfit-tendencia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.columna-imagen {
+    flex: 0 0 45%;
+    max-width: 500px;
+}
+
+.columna-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.columna-info {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.columna-info h1 {
+    font-size: 52px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.lista-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.producto-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 182, 203, 0.4);
+    padding: 20px 30px;
+    border-radius: 15px;
+    gap: 20px;
+}
+
+.producto-nombre {
+    flex: 1;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.producto-talla {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.talla-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-texto);
+}
+
+.tallas-opciones {
+    display: flex;
+    gap: 10px;
+}
+
+.talla-opcion {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.talla-opcion input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.talla-custom {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 182, 203, 0.4);
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+    color: var(--color-texto);
+}
+
+.talla-opcion input[type="radio"]:checked + .talla-custom {
+    background-color: var(--color-acento);
+    border: 2px solid var(--color-acento);
+}
+
+.talla-opcion:hover .talla-custom {
+    background-color: rgba(255, 182, 203, 0.6);
+}
+
+.producto-precio {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-texto);
+    min-width: 100px;
+    text-align: right;
+}
+
+.btn-agregar-carrito {
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    font-size: 22px;
+    font-weight: 700;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn-agregar-carrito:hover {
+    background-color: #c27b95;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+
+/*    Diseño responsive */
+@media (max-width: 1024px) {
+    .outfit-tendencia {
+        gap: 40px;
+        padding: 0 40px;
+    }
+
+    .columna-info h1 {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+
+    .producto-item {
+        padding: 15px 25px;
+        gap: 15px;
+    }
+
+    .producto-nombre {
+        font-size: 16px;
+    }
+
+    .producto-precio {
+        font-size: 18px;
+    }
+
+    .btn-agregar-carrito {
+        font-size: 20px;
+        padding: 18px 40px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    .outfit-tendencia {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .columna-imagen {
+        flex: 1;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .columna-imagen img {
+        border-radius: 20px;
+    }
+
+    .columna-info {
+        flex: 1;
+        width: 100%;
+    }
+
+    .columna-info h1 {
+        font-size: 32px;
+        font-weight: 900;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+
+    .lista-productos {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .producto-item {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 12px;
+    }
+
+    .producto-nombre {
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        width: 100%;
+    }
+
+    .producto-talla {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .talla-label {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .tallas-opciones {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .talla-custom {
+        width: 50px;
+        height: 50px;
+        font-size: 15px;
+    }
+
+    .producto-precio {
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        width: 100%;
+        min-width: auto;
+    }
+
+    .btn-agregar-carrito {
+        font-size: 18px;
+        font-weight: 700;
+        padding: 15px 35px;
+        border-radius: 12px;
+    }
+}
