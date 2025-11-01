@@ -17,31 +17,28 @@
         <div class="login-container">
 
             <!-- Vista de Iniciar Sesión -->
-            <div class="form-view" id="login-view">
+            <div class="form-view active" id="login-view">
                 <h1>Iniciar Sesión</h1>
-                <!-- Aquí tu código -->
-        
+                <form class="auth-form loging-form" id="form-login">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="login-correo">Correo electrónico</label>
+                            <input type="email" id="login-correo" name="correo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Contraseña</label>
+                            <input type="password" id="login-password" name="password" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">Iniciar Sesión</button>
+                </form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <a href="#" class="link-olvidaste">Olvidaste tu contraseña?</a>
-                <a href="#" class="link-toggle" id="ir-a-registro">¿No tienes una cuenta?</a>
+                <a href="#" id="ir-a-recuperar" title="Restablecer">¿Olvidaste tu contraseña?</a>
+                <a href="#" class="link-toggle" id="ir-a-registro" style="display:block; margin-top:25px;">¿No tienes una cuenta?</a>
             </div>
 
             <!-- Vista de Registro -->
-            <div class="form-view active" id="registro-view">
+            <div class="form-view" id="registro-view">
                 <h1>Registro</h1>
                 <form class="auth-form registro-form" id="form-registro">
                     <div class="form-row">
@@ -68,7 +65,7 @@
 
                     <div class="form-row">
                         <div class="form-group genero-group">
-                            <label>Genero</label>
+                            <label>Género</label>
                             <div class="radio-group">
                                 <label class="radio-label">
                                     <input type="radio" name="genero" value="masculino" required>
@@ -92,6 +89,50 @@
                 <a href="#" class="link-toggle" id="ir-a-login">¿Tienes una cuenta?</a>
             </div>
 
+            <!-- Vista de Recuperar Contraseña -->
+            <div class="form-view" id="recuperar-view">
+                <h1>Recuperar Contraseña</h1>
+                <form id="form-recuperar">
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="recuperar-correo">Correo electrónico</label>
+                            <input type="email" id="recuperar-correo" name="correo" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="codigo-verificacion">Código</label>
+                            <input type="text" id="codigo-verificacion" name="codigo" placeholder="123456">
+                        </div>
+                    </div>
+
+                    <!-- BOTONES DE ENVÍO Y CONFIRMACIÓN -->
+                    <div class="form-row" style="display:flex; justify-content:center; gap:10px; margin-top:30px;">
+                        <button type="button" class="btn-submit" id="btn-enviar-codigo">Enviar código</button>
+                        <button type="button" class="btn-submit" id="btn-confirmar-codigo">Confirmar código</button>
+                    </div>
+                </form>
+
+                <p id="mensaje-recuperacion" style="margin-top:10px; font-size:14px; color:red;"></p>
+
+                <!-- Se bajó el botón de volver -->
+                <a href="#" class="link-toggle" id="volver-login" style="display:block; margin-top:30px;">Volver al inicio de sesión</a>
+            </div>
+
+            <!-- Vista de Restablecer Contraseña -->
+            <div class="form-view" id="nueva-pass-view" style="display:none;">
+                <h1>Restablecer Contraseña</h1>
+                <form id="form-nueva-pass">
+                    <div class="form-group">
+                        <label for="nueva-password">Nueva contraseña</label>
+                        <input type="password" id="nueva-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmar-password">Confirmar contraseña</label>
+                        <input type="password" id="confirmar-password" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Guardar nueva contraseña</button>
+                </form>
+            </div>
+
         </div>
     </main>
 
@@ -99,34 +140,115 @@
 
     <script src="js/layout.js"></script>
     <script>
-        // Alternar entre login y registro
         document.addEventListener("DOMContentLoaded", function() {
-            const linkIrARegistro = document.getElementById('ir-a-registro');
-            const linkIrALogin = document.getElementById('ir-a-login');
             const loginView = document.getElementById('login-view');
             const registroView = document.getElementById('registro-view');
+            const recuperarView = document.getElementById('recuperar-view');
+            const nuevaPassView = document.getElementById('nueva-pass-view');
+            let codigoGenerado = null;
 
-            linkIrARegistro.addEventListener('click', function(e) {
+            // Navegación entre vistas
+            document.getElementById('ir-a-registro').addEventListener('click', e => {
                 e.preventDefault();
                 loginView.classList.remove('active');
                 registroView.classList.add('active');
             });
 
-            linkIrALogin.addEventListener('click', function(e) {
+            document.getElementById('ir-a-login').addEventListener('click', e => {
                 e.preventDefault();
                 registroView.classList.remove('active');
                 loginView.classList.add('active');
             });
 
-
-            document.getElementById('form-login').addEventListener('submit', function(e) {
+            document.getElementById('ir-a-recuperar').addEventListener('click', e => {
                 e.preventDefault();
-                console.log('Login form submitted');
+                loginView.classList.remove('active');
+                recuperarView.classList.add('active');
             });
 
-            document.getElementById('form-registro').addEventListener('submit', function(e) {
+            document.getElementById('volver-login').addEventListener('click', e => {
                 e.preventDefault();
-                console.log('Registro form submitted');
+                recuperarView.classList.remove('active');
+                loginView.classList.add('active');
+            });
+
+            // Registro
+            document.getElementById('form-registro').addEventListener('submit', e => {
+                e.preventDefault();
+                const usuario = {
+                    nombres: document.getElementById('registro-nombres').value,
+                    apellidos: document.getElementById('registro-apellidos').value,
+                    correo: document.getElementById('registro-correo').value,
+                    password: document.getElementById('registro-password').value,
+                    genero: document.querySelector('input[name="genero"]:checked').value
+                };
+                const confirm = document.getElementById('registro-password-confirm').value;
+                if (usuario.password !== confirm) {
+                    alert('Las contraseñas no coinciden');
+                    return;
+                }
+                localStorage.setItem('usuario', JSON.stringify(usuario));
+                registroView.classList.remove('active');
+                loginView.classList.add('active');
+            });
+
+            // Login
+            document.getElementById('form-login').addEventListener('submit', e => {
+                e.preventDefault();
+                const correo = document.getElementById('login-correo').value;
+                const pass = document.getElementById('login-password').value;
+                const usuario = JSON.parse(localStorage.getItem('usuario'));
+                if (usuario && usuario.correo === correo && usuario.password === pass) {
+                    alert('Bienvenido ' + usuario.nombres);
+                } else {
+                    alert('Correo o contraseña incorrectos.');
+                }
+            });
+
+            // Enviar código
+            document.getElementById('btn-enviar-codigo').addEventListener('click', () => {
+                const correo = document.getElementById('recuperar-correo').value.trim();
+                const usuario = JSON.parse(localStorage.getItem('usuario'));
+                const mensaje = document.getElementById('mensaje-recuperacion');
+                if (usuario && usuario.correo === correo) {
+                    codigoGenerado = Math.floor(100000 + Math.random() * 900000);
+                    alert('Código enviado correctamente: ' + codigoGenerado);
+                    mensaje.textContent = ''; // No se muestra texto abajo
+                } else {
+                    mensaje.style.color = 'red';
+                    mensaje.textContent = 'Correo no registrado.';
+                }
+            });
+
+            // Confirmar código
+            document.getElementById('btn-confirmar-codigo').addEventListener('click', () => {
+                const codigoIngresado = document.getElementById('codigo-verificacion').value.trim();
+                const mensaje = document.getElementById('mensaje-recuperacion');
+                if (parseInt(codigoIngresado) === codigoGenerado) {
+                    recuperarView.classList.remove('active');
+                    nuevaPassView.style.display = 'block';
+                    codigoGenerado = null;
+                } else {
+                    mensaje.style.color = 'red';
+                    mensaje.textContent = 'Código incorrecto.';
+                }
+            });
+
+            // Guardar nueva contraseña
+            document.getElementById('form-nueva-pass').addEventListener('submit', e => {
+                e.preventDefault();
+                const nueva = document.getElementById('nueva-password').value;
+                const confirmar = document.getElementById('confirmar-password').value;
+                if (nueva !== confirmar) {
+                    alert('Las contraseñas no coinciden');
+                    return;
+                }
+                const usuario = JSON.parse(localStorage.getItem('usuario'));
+                usuario.password = nueva;
+                localStorage.setItem('usuario', JSON.stringify(usuario));
+                alert('Contraseña restablecida con éxito.');
+                nuevaPassView.style.display = 'none';
+                loginView.classList.add('active');
             });
         });
     </script>
