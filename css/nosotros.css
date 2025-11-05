@@ -1,0 +1,313 @@
+.sobre-nosotros {
+    background-color: var(--color-fondo);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contenedor-sobre {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 70px;
+    flex-wrap: wrap;
+}
+
+.imagen-sobre {
+    flex: 1;
+    min-width: 300px;
+}
+
+.imagen-sobre img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    border-radius: 24px;
+}
+
+.texto-sobre {
+    flex: 1.6;
+    min-width: 320px;
+    padding-top: 8px;
+}
+
+.texto-sobre h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-texto);
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+.texto-sobre > h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-acento);
+    margin: 32px 0 16px 0;
+}
+
+.texto-sobre > p {
+    font-size: 17px;
+    color: var(--color-texto);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.mision-vision {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.mision, .vision {
+    flex: 1;
+    min-width: 280px;
+    background: var(--color-acento);
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mision:hover, .vision:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.mision h3, .vision h3 {
+    font-size: 22px;
+    color: var(--color-blanco);
+    margin: 0 0 12px 0;
+    font-weight: 700;
+}
+
+.mision p, .vision p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--color-blanco);
+    line-height: 1.7;
+}
+
+.valores {
+    padding: 80px 20px;
+    background-color: var(--color-header-footer);
+}
+
+.contenedor-valores {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.valores h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-texto);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.grid-valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.valor-item {
+    background: var(--color-blanco);
+    padding: 35px 25px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valor-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.icono-valor {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: var(--color-acento);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icono-valor i {
+    font-size: 32px;
+    color: var(--color-blanco);
+}
+
+.valor-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-texto);
+    margin: 0 0 12px 0;
+}
+
+.valor-item p {
+    font-size: 15px;
+    color: var(--color-texto);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.por-que-elegirnos {
+    padding: 80px 20px;
+    background-color: var(--color-fondo);
+}
+
+.contenedor-elegirnos {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.por-que-elegirnos h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-texto);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.grid-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+.beneficio-item {
+    background: var(--color-blanco);
+    padding: 35px 28px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beneficio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.beneficio-item i {
+    font-size: 48px;
+    color: var(--color-acento);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.beneficio-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-texto);
+    margin: 0 0 12px 0;
+}
+
+.beneficio-item p {
+    font-size: 15px;
+    color: var(--color-texto);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .contenedor-sobre {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .texto-sobre {
+        padding-top: 0;
+    }
+
+    .texto-sobre h2 {
+        font-size: 30px;
+    }
+
+    .texto-sobre > h3 {
+        font-size: 24px;
+    }
+
+    .texto-sobre > p {
+        font-size: 16px;
+    }
+
+    .mision-vision {
+        flex-direction: column;
+    }
+
+    .imagen-sobre {
+        min-width: 100%;
+    }
+
+    .imagen-sobre img {
+        border-radius: 18px;
+    }
+
+    .valores h2,
+    .por-que-elegirnos h2 {
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+
+    .grid-valores,
+    .grid-beneficios {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .sobre-nosotros,
+    .valores,
+    .por-que-elegirnos {
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sobre-nosotros,
+    .valores,
+    .por-que-elegirnos {
+        padding: 50px 15px;
+    }
+
+    .mision, .vision {
+        padding: 24px;
+    }
+
+    .valor-item,
+    .beneficio-item {
+        padding: 28px 20px;
+    }
+
+    .texto-sobre h2 {
+        font-size: 26px;
+    }
+
+    .texto-sobre > h3 {
+        font-size: 22px;
+    }
+
+    .valores h2,
+    .por-que-elegirnos h2 {
+        font-size: 26px;
+    }
+
+    .icono-valor {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icono-valor i {
+        font-size: 28px;
+    }
+
+    .beneficio-item i {
+        font-size: 42px;
+    }
+}
