@@ -1,0 +1,451 @@
+body,
+.card,
+.card-body,
+.card-title,
+.card-text,
+.list-group-item,
+.form-control,
+.btn,
+.page-link,
+input,
+button,
+select,
+textarea {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+header a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+header .menu-principal a:hover {
+    color: inherit !important;
+}
+
+/* Enlaces del footer sin subrayado*/
+footer a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+footer a:hover {
+    color: inherit !important;
+}
+
+/* Evitar que el header se mueva - forzar todas las propiedades originales */
+header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 30px 80px 0px 0px !important;
+    background-color: var(--color-header-footer) !important;
+    width: 100% !important;
+    overflow: visible !important;
+    position: relative;
+    z-index: 100;
+    margin: 0 !important;
+}
+
+header .logo {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    flex: 0 0 auto !important;
+}
+
+header .logo a {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    display: inline-block !important;
+}
+
+header .logo a img {
+    height: 70px !important;
+    transform: translateY(-12px) scale(1.3) !important;
+    transform-origin: left center !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+header .menu-principal {
+    margin-right: -630px !important;
+    flex: 0 0 auto !important;
+}
+
+header .menu-principal ul {
+    display: flex !important;
+    list-style: none !important;
+    gap: 30px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+header .menu-principal a {
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    transition: background-color 0.3s !important;
+}
+
+header .menu-principal a:hover {
+    background-color: var(--color-items) !important;
+}
+
+header .iconos-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 70px !important;
+    flex: 0 0 auto !important;
+}
+
+header .iconos-header a {
+    font-size: 28px !important;
+    color: var(--color-texto) !important;
+    transition: color 0.3s !important;
+}
+
+header .iconos-header a:hover {
+    color: var(--color-acento) !important;
+}
+
+/* Evitar que el footer se mueva */
+footer {
+    position: relative;
+    z-index: 100;
+}
+
+/* Main content con el fondo del proyecto */
+.main-content {
+    background-color: var(--color-fondo);
+    overflow: hidden !important;
+    display: flex !important;
+    min-height: 80vh;
+}
+
+/* Evitar scroll en todo el body cuando estamos en catalogo */
+body {
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Asegurar que el main de Bootstrap no afecte el layout */
+main.container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Sidebar de filtros - ocupa toda la altura */
+.sidebar-filtros {
+    background-color: var(--color-fondo) !important;
+    border-right: 2px solid rgba(209, 116, 161, 0.3) !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.sidebar-scroll {
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Personalizacion de cards de filtro */
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.sidebar-scroll .card:first-child {
+    margin-top: 50px;
+}
+
+.card-header {
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+.card-header:hover {
+    background-color: #c27b95;
+}
+
+/* Estilos de items del sidebar */
+.list-group-item {
+    border: none !important;
+    background-color: transparent !important;
+    padding: 10px 15px !important;
+    transition: background-color 0.3s !important;
+    color: var(--color-texto) !important;
+}
+
+.list-group-item:hover {
+    background-color: rgba(209, 116, 161, 0.2) !important;
+    color: var(--color-texto) !important;
+}
+
+.list-group-item.active {
+    background-color: var(--color-acento) !important;
+    color: var(--color-blanco) !important;
+    font-weight: 600 !important;
+}
+
+/* Fix para links de Bootstrap en sidebar */
+.list-group-item-action {
+    color: var(--color-texto) !important;
+}
+
+.list-group-item-action:focus {
+    background-color: rgba(209, 116, 161, 0.2) !important;
+    color: var(--color-texto) !important;
+}
+
+/* Circulos de color */
+.color-circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #999;
+    margin-right: 10px;
+}
+
+/* Estilos para checkboxes de tallas */
+.form-check-input {
+    border: 2px solid var(--color-acento) !important;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--color-acento) !important;
+    border-color: var(--color-acento) !important;
+}
+
+.form-check-input:focus {
+    border-color: var(--color-acento) !important;
+    box-shadow: 0 0 0 0.25rem rgba(209, 116, 161, 0.25) !important;
+}
+
+/* Labels de tallas con hover */
+.list-group-item label {
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* Barra de busqueda */
+.search-bar {
+    max-width: 300px;
+}
+
+.search-input {
+    background-color: var(--color-header-footer);
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.search-input:focus {
+    background-color: var(--color-header-footer);
+    border: none;
+    box-shadow: none !important;
+}
+
+.input-group-text {
+    background-color: var(--color-header-footer);
+    border: none;
+}
+
+/* Grid de productos - sin scrollbars innecesarios */
+.main-content .card {
+    border: none;
+    background-color: var(--color-blanco);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.main-content .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Eliminar márgenes de las tarjetas que causan scroll */
+.main-content .col {
+    padding: 8px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    background-color: var(--color-blanco);
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.card-text {
+    color: var(--color-acento);
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+/* Contenedor de productos sin scroll horizontal ni vertical innecesario */
+.flex-grow-1 {
+    overflow: visible !important;
+}
+
+/* El row de bootstrap no debe causar scroll horizontal */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Contenedor principal de columnas sin overflow */
+.col-12.col-md-9.col-lg-10 {
+    overflow: visible !important;
+}
+
+/* Paginacion */
+.pagination {
+    gap: 30px;
+}
+
+.page-link {
+    background-color: var(--color-header-footer) !important;
+    border: none !important;
+    color: var(--color-texto) !important;
+    border-radius: 8px !important;
+    padding: 8px 15px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s !important;
+}
+
+.page-link:focus {
+    background-color: var(--color-acento) !important;
+    color: var(--color-texto) !important;
+    box-shadow: 0 0 0 0.25rem rgba(209, 116, 161, 0.25) !important;
+}
+
+.page-item.active .page-link {
+    background-color: var(--color-acento) !important;
+    color: var(--color-texto) !important;
+    font-weight: 700 !important;
+}
+
+.page-item.disabled .page-link {
+    background-color: rgba(244, 207, 215, 0.5) !important;
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Scrollbar personalizado */
+.sidebar-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-acento);
+    border-radius: 10px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+    background: #c27b95;
+}
+
+/* Diseno responsive */
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 40px 0px 20px !important;
+    }
+    footer a {
+        text-decoration: none !important;
+        color: inherit !important;
+    }
+
+    header .logo a img {
+        height: 70px !important;
+        transform: translateY(7px) scale(1.3) !important;
+        transform-origin: left center !important;
+        margin-left: -22px !important;
+    }
+
+    header .menu-principal {
+        margin-right: -400px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px !important;
+        justify-content: space-between !important;
+    }
+    footer a {
+        text-decoration: none !important;
+        color: inherit !important;
+    }
+
+    header .logo a img {
+        height: 50px !important;
+        transform: translateY(-5px) scale(1.2) !important;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+
+    .search-bar {
+        max-width: 100%;
+    }
+
+    .sidebar-scroll {
+        max-height: none;
+    }
+
+    .main-content .card {
+        margin: 5px;
+    }
+
+    .card-title {
+        font-size: 13px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 150px;
+    }
+
+    .card-title {
+        font-size: 12px;
+    }
+
+    .card-text {
+        font-size: 13px;
+    }
+
+    .page-link {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
