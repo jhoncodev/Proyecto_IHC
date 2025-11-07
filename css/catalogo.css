@@ -184,6 +184,7 @@ main.container-fluid {
     padding: 10px 15px !important;
     transition: background-color 0.3s !important;
     color: var(--color-texto) !important;
+    text-decoration: none !important;
 }
 
 .list-group-item:hover {
@@ -200,11 +201,25 @@ main.container-fluid {
 /* Fix para links de Bootstrap en sidebar */
 .list-group-item-action {
     color: var(--color-texto) !important;
+    text-decoration: none !important;
 }
 
 .list-group-item-action:focus {
     background-color: rgba(209, 116, 161, 0.2) !important;
     color: var(--color-texto) !important;
+}
+
+/* Quitar subrayado del menú móvil hamburguesa */
+.menu-mobile-nav a {
+    text-decoration: none !important;
+}
+
+.menu-mobile-nav a:hover {
+    text-decoration: none !important;
+}
+
+.menu-mobile-nav a:focus {
+    text-decoration: none !important;
 }
 
 /* Circulos de color */
@@ -370,10 +385,12 @@ main.container-fluid {
 }
 
 /* Diseno responsive */
-@media (max-width: 1024px) {
+/* Ocultar menú e iconos antes de 1450px para evitar superposición */
+@media (max-width: 1450px) {
     header {
         padding: 20px 40px 0px 20px !important;
     }
+
     footer a {
         text-decoration: none !important;
         color: inherit !important;
@@ -387,7 +404,23 @@ main.container-fluid {
     }
 
     header .menu-principal {
-        margin-right: -400px !important;
+        display: none !important;
+    }
+
+    header .iconos-header a {
+        display: none !important;
+    }
+
+    header .iconos-header {
+        gap: 0 !important;
+    }
+
+    .hamburger-btn {
+        display: block !important;
+    }
+
+    .menu-mobile {
+        display: block !important;
     }
 }
 

@@ -210,6 +210,29 @@ main {
    RESPONSIVE DESIGN - LOGIN
    =================================== */
 
+/* Ocultar menú e iconos antes de 1450px para evitar superposición */
+@media (max-width: 1450px) {
+    header .menu-principal {
+        display: none;
+    }
+
+    header .iconos-header a {
+        display: none;
+    }
+
+    header .iconos-header {
+        gap: 0;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+}
+
 /* Tablets y pantallas medianas */
 @media (max-width: 1024px) {
     .login-container {
