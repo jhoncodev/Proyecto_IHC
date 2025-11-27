@@ -4,6 +4,123 @@ main {
     padding: 40px 0;
 }
 
+/* Payment Modal */
+.payment-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.payment-modal.show {
+    opacity: 1;
+}
+
+.payment-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.payment-modal-content {
+    position: relative;
+    background: linear-gradient(135deg, var(--color-fondo) 0%, #fff 100%);
+    border-radius: 20px;
+    padding: 50px 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.payment-modal.show .payment-modal-content {
+    transform: scale(1);
+}
+
+.payment-success-icon {
+    font-size: 80px;
+    color: #28a745;
+    margin-bottom: 20px;
+    animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.payment-modal-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-texto);
+    margin-bottom: 15px;
+}
+
+.payment-modal-content > p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.payment-details {
+    background-color: rgba(255, 182, 203, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+.payment-details p {
+    font-size: 16px;
+    color: var(--color-texto);
+    margin: 10px 0;
+}
+
+.payment-message {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 25px !important;
+}
+
+.btn-close-modal {
+    background-color: var(--color-acento);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(209, 116, 161, 0.3);
+}
+
+.btn-close-modal:hover {
+    background-color: #c27b95;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(209, 116, 161, 0.4);
+}
+
 .carrito-container {
     max-width: 1600px;
     margin: 0 auto;
